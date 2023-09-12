@@ -1,3 +1,9 @@
+let btnRock = document.querySelector("#userRock");
+let btnPaper = document.querySelector("#userPaper");
+let btnScissor = document.querySelector("#userScissor");
+let resultDiv = document.querySelector("#resultados");
+let nameGanador = document.querySelector("#nombreGanador");
+let explicacionGanador = document.querySelector("#explicacionGanador");
 function getComputerChoice() {
   let computerNumber = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
   let computerChoice;
@@ -17,53 +23,71 @@ function getComputerChoice() {
 
 function playRound(computerChoice, humanChoice) {
   if (computerChoice == humanChoice) {
-    alert("Draw!!!");
+    nameGanador.innerText = "Empate, Intentalo de nuevo";
+    explicacionGanador.style.display = "none";
     return "draw";
   } else if (computerChoice == 1 && humanChoice == 3) {
-    alert("Computer wins!!! Rock beats Scissor");
+    nameGanador.innerText = "Ganó la máquina";
+    explicacionGanador.innerText = "La piedra destruye las tijeras";
+    explicacionGanador.style.display = "block";
+
     return "computer";
   } else if (computerChoice == 2 && humanChoice == 1) {
-    alert("Computer wins!!! Paper beats Rock");
+    nameGanador.innerText = "Ganó la máquina";
+    explicacionGanador.innerText = "El Papel envuelve a la Piedra";
+    explicacionGanador.style.display = "block";
+
     return "computer";
   } else if (computerChoice == 3 && humanChoice == 2) {
-    alert("Computer win!!! Scissor beats Paper");
+    nameGanador.innerText = "Ganó la máquina";
+    explicacionGanador.innerText = "Las Tijeras cortan el Papel";
+    explicacionGanador.style.display = "block";
+
     return "computer";
   } else if (computerChoice == 3 && humanChoice == 1) {
-    alert("You win!!! Rock beats Scissors");
+    nameGanador.innerText = "Ganaste!!!";
+    explicacionGanador.innerText = "La Piedra destruye las Tijeras";
+    explicacionGanador.style.display = "block";
+
     return "human";
   } else if (computerChoice == 1 && humanChoice == 2) {
-    alert("You win!!! Paper beats Rock");
+    nameGanador.innerText = "Ganaste!!!";
+    explicacionGanador.innerText = "El Papel envuelve la Piedra";
+    explicacionGanador.style.display = "block";
+
     return "human";
   } else if (computerChoice == 2 && humanChoice == 3) {
-    alert("You win!!! Scissor beats Paper");
+    nameGanador.innerText = "Ganaste!!!";
+    explicacionGanador.innerText = "Las Tijeras cortan el Papel";
+    explicacionGanador.style.display = "block";
+
     return "human";
   }
 }
+// function game() {
+//   let resultadosPartidas = [];
+//   for (let i = 0; i < 3; i++) {
+//     let resultado = playRound(getComputerChoice(), humanChoice());
+//     resultadosPartidas.push(resultado);
+//   }
+//   let resultadoComputerArray = [];
+//   let resultadoHumanArray = [];
 
-function game() {
-  let resultadosPartidas = [];
-  for (let i = 0; i < 3; i++) {
-    let resultado = playRound(getComputerChoice(), humanChoice());
-    resultadosPartidas.push(resultado);
-  }
-  let resultadoComputerArray = [];
-  let resultadoHumanArray = [];
-
-  for (let i = 0; i < resultadosPartidas.length; i++) {
-    if (resultadosPartidas[i] == "computer") {
-      resultadoComputerArray.push(1);
-    } else if (resultadosPartidas[i] == "human") {
-      resultadoHumanArray.push(1);
-    }
-  }
-  if (resultadoComputerArray.length < resultadoHumanArray.length) {
-    console.log("Human win!!!");
-  } else if (resultadoComputerArray.length > resultadoHumanArray.length) {
-    console.log("Computer win!!!");
-  } else {
-    console.log("Draw!!!");
-  }
-}
+//   for (let i = 0; i < resultadosPartidas.length; i++) {
+//     if (resultadosPartidas[i] == "computer") {
+//       resultadoComputerArray.push(1);
+//     } else if (resultadosPartidas[i] == "human") {
+//       resultadoHumanArray.push(1);
+//     }
+//   }
+//   if (resultadoComputerArray.length < resultadoHumanArray.length) {
+//     console.log("Human win!!!");
+//   } else if (resultadoComputerArray.length > resultadoHumanArray.length) {
+//     console.log("Computer win!!!");
+//   } else {
+//     console.log("Draw!!!");
+//   }
+// }
 
 function humanChoice(humanChoice) {
   switch (humanChoice) {
@@ -78,16 +102,6 @@ function humanChoice(humanChoice) {
       break;
   }
   return humanChoice;
-}
-
-let btns = document.querySelectorAll(".user-play");
-
-let btnRock = document.querySelector("#userRock");
-let btnPaper = document.querySelector("#userPaper");
-let btnScissor = document.querySelector("#userScissor");
-
-function saluda() {
-  alert("Hola ");
 }
 
 btnRock.addEventListener("click", function () {
