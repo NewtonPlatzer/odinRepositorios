@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissor</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/94a0e3156c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
       <h1>Piedra, Papel o Tijera!!!</h1>
     </header>
 
-    <div class="aclaraciones"></div>
+    <div class="container">
+      <button class="user-play" id="userRock" value="rock">
+        <i class="fa-solid fa-hand-fist"></i>Piedra
+      </button>
+      <button class="user-play" id="userPaper" value="paper">
+        <i class="fa-solid fa-hand"></i>Papel
+      </button>
+      <button class="user-play" id="userScissor" value="scissor">
+        <i class="fa-solid fa-hand-scissors"></i>
+        Tijera
+      </button>
+    </div>
   </body>
   <footer>
     <h3>Aclaraciones</h3>
@@ -22,12 +37,14 @@
       </p>
       <p>
         Despues de que tú escojas con que quieres jugar la computadora
-        aleatoriamente escogera su jugada y el ganador sera elegido según las reglas del
-        tradicional juego.
+        aleatoriamente escogera su jugada y el ganador sera elegido según las
+        reglas del tradicional juego.
       </p>
       <p>El ganador final es el que mas gane en 5 partidas</p>
     </div>
-    <p style="font-style: italic; font-weight: bold;letter-spacing: 0.8px;">Hecho por Ike Gomber</p>
+    <p style="font-style: italic; font-weight: bold; letter-spacing: 0.8px">
+      Hecho por Ike Gomber
+    </p>
   </footer>
 
   <script src="script.js"></script>
