@@ -14,22 +14,6 @@ function getComputerChoice() {
   }
   return computerNumber;
 }
-function humanChoice() {
-  let humanChoice = prompt("Rock, Paper, Scissor");
-  let varHumanChoice = humanChoice.toLowerCase();
-  switch (varHumanChoice) {
-    case "rock":
-      humanChoice = 1;
-      break;
-    case "paper":
-      humanChoice = 2;
-      break;
-    case "scissor":
-      humanChoice = 3;
-      break;
-  }
-  return humanChoice;
-}
 
 function playRound(computerChoice, humanChoice) {
   if (computerChoice == humanChoice) {
@@ -58,7 +42,7 @@ function playRound(computerChoice, humanChoice) {
 
 function game() {
   let resultadosPartidas = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
     let resultado = playRound(getComputerChoice(), humanChoice());
     resultadosPartidas.push(resultado);
   }
@@ -81,9 +65,37 @@ function game() {
   }
 }
 
-const btn = document.querySelector("#btn");
-btn.addEventListener("click", function (e) {
-  e.target.style.background = "blue";
-  e.target.style.color = "white";
+function humanChoice(humanChoice) {
+  switch (humanChoice) {
+    case "rock":
+      humanChoice = 1;
+      break;
+    case "paper":
+      humanChoice = 2;
+      break;
+    case "scissor":
+      humanChoice = 3;
+      break;
+  }
+  return humanChoice;
+}
+
+let btns = document.querySelectorAll(".user-play");
+
+let btnRock = document.querySelector("#userRock");
+let btnPaper = document.querySelector("#userPaper");
+let btnScissor = document.querySelector("#userScissor");
+
+function saluda() {
+  alert("Hola ");
+}
+
+btnRock.addEventListener("click", function () {
+  playRound(getComputerChoice(), humanChoice("rock"));
 });
-console.log("This is a new console");
+btnPaper.addEventListener("click", function () {
+  playRound(getComputerChoice(), humanChoice("paper"));
+});
+btnScissor.addEventListener("click", function () {
+  playRound(getComputerChoice(), humanChoice("scissor"));
+});
