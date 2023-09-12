@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/94a0e3156c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -16,16 +17,23 @@
     </header>
 
     <div class="container">
-      <button class="user-play" id="userRock" value="rock">
-        <i class="fa-solid fa-hand-fist"></i>Piedra
-      </button>
-      <button class="user-play" id="userPaper" value="paper">
-        <i class="fa-solid fa-hand"></i>Papel
-      </button>
-      <button class="user-play" id="userScissor" value="scissor">
-        <i class="fa-solid fa-hand-scissors"></i>
-        Tijera
-      </button>
+      <div class="containerBtns">
+        <button class="user-play" id="userRock" value="rock">
+          <i class="fa-solid fa-hand-fist"></i>Piedra
+        </button>
+        <button class="user-play" id="userPaper" value="paper">
+          <i class="fa-solid fa-hand"></i>Papel
+        </button>
+        <button class="user-play" id="userScissor" value="scissor">
+          <i class="fa-solid fa-hand-scissors"></i>
+          Tijera
+        </button>
+      </div>
+      <div class="containerResultados" id="resultados">
+        <p>Resultados:</p>
+        <h2 id="nombreGanador"></h2>
+        <p id="explicacionGanador"></p>
+      </div>
     </div>
   </body>
   <footer>
@@ -46,6 +54,4 @@
       Hecho por Ike Gomber
     </p>
   </footer>
-
-  <script src="script.js"></script>
 </html>
