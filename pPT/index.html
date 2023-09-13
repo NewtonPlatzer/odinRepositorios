@@ -9,7 +9,6 @@
       src="https://kit.fontawesome.com/94a0e3156c.js"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js" defer></script>
   </head>
   <body>
     <header>
@@ -18,17 +17,29 @@
 
     <div class="container">
       <div class="containerBtns">
-        <button class="user-play" id="userRock" value="rock">
+        <button class="cardOperation" id="userRock" value="rock">
           <i class="fa-solid fa-hand-fist"></i>Piedra
         </button>
-        <button class="user-play" id="userPaper" value="paper">
+        <button class="cardOperation" id="userPaper" value="paper">
           <i class="fa-solid fa-hand"></i>Papel
         </button>
-        <button class="user-play" id="userScissor" value="scissor">
+        <button class="cardOperation" id="userScissor" value="scissor">
           <i class="fa-solid fa-hand-scissors"></i>
           Tijera
         </button>
       </div>
+
+      <div id="selJugadores">
+        <div class="selHuman cardOperation">
+          <h3>Seleccionaste</h3>
+          <p class="pOperacionElegida" id="userSel"></p>
+        </div>
+        <div class="selComputer cardOperation">
+          <h3>El Computador selecciono</h3>
+          <p class="pOperacionElegida" id="computerSel"></p>
+        </div>
+      </div>
+
       <div class="containerResultados" id="resultados">
         <p>Resultados:</p>
         <h2 id="nombreGanador"></h2>
@@ -53,5 +64,6 @@
     <p style="font-style: italic; font-weight: bold; letter-spacing: 0.8px">
       Hecho por Ike Gomber
     </p>
+    <script src="script.js"></script>
   </footer>
 </html>
